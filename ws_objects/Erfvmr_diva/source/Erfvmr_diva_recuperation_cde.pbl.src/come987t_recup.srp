@@ -1,0 +1,16 @@
+﻿$PBExportHeader$come987t_recup.srp
+$PBExportComments$Pipeline pour mise à jour des textes associés aux commandes
+PIPELINE(source_connect=LC - Développement,destination_connect=Mysql Force Vente,type=replace,commit=100,errors=100,keyname="idx_cde_texte")
+SOURCE(name="COME9087/COME90PA",COLUMN(type=datetime,name="COME9087.TIMEFCRE",dbtype="datetime",nulls_allowed=no)
+ COLUMN(type=char,name="COME9087.CODEEMAJ",dbtype="char(1)",nulls_allowed=no)
+ COLUMN(type=char,name="COME9087.NUMAECDE",dbtype="char(6)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="COME9087.CODAELAN",dbtype="char(1)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="COME9087.NUMAELIG",dbtype="char(3)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="COME9087.LIGAETXT",dbtype="char(70)",nulls_allowed=yes))
+RETRIEVE(statement="PBSELECT( VERSION(400) TABLE(NAME=~"COME9087~" )  TABLE(NAME=~"COME90PA~" ) COLUMN(NAME=~"COME9087.TIMEFCRE~") COLUMN(NAME=~"COME9087.CODEEMAJ~") COLUMN(NAME=~"COME9087.NUMAECDE~") COLUMN(NAME=~"COME9087.CODAELAN~") COLUMN(NAME=~"COME9087.NUMAELIG~") COLUMN(NAME=~"COME9087.LIGAETXT~")    JOIN (LEFT=~"COME9087.NUMAECDE~"    OP =~"=~"RIGHT=~"COME90PA.NUMAECDE~" )WHERE(    EXP1 =~"( COME90PA.CODEEVIS~"   OP =~"in~"    EXP2 =~"(  SELECT COME9SVI.CODEEVIS                                         FROM COME9SVI                                        WHERE COME9SVI.CODEESEL = 'O'  and COME9SVI.CVIAEMAJ = :as_visiteur)~"    LOGIC =~"or~" ) WHERE(    EXP1 =~" COME90PA.CVIAEMAJ~"   OP =~"in~"    EXP2 =~"( SELECT COME9SVI.CODEEVIS FROM COME9SVI WHERE COME9SVI.CODEESEL = 'O'    and COME9SVI.CVIAEMAJ = :as_visiteur ) )~" ) ) ARG(NAME = ~"as_visiteur~" TYPE = string)",arguments((as_visiteur,String)))
+DESTINATION(name="COME987T",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no,initial_value="today")
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="NUMAECDE",dbtype="char(6)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="CODAELAN",dbtype="char(1)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="NUMAELIG",dbtype="char(3)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="LIGAETXT",dbtype="char(70)",nulls_allowed=yes))

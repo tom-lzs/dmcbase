@@ -1,0 +1,16 @@
+﻿$PBExportHeader$come9082.srp
+$PBExportComments$Pipeline pour mise à jour du répertoire des textes transporteurs associés aux clients
+PIPELINE(source_connect=LC - Développement,destination_connect=Mysql Force Vente,type=replace,commit=100,errors=100,keyname="COME9082_x")
+SOURCE(name="COME9082/COME9040",COLUMN(type=datetime,name="COME9082.TIMEFCRE",dbtype="datetime",nulls_allowed=no)
+ COLUMN(type=char,name="COME9082.CODEEMAJ",dbtype="char(1)",nulls_allowed=no)
+ COLUMN(type=char,name="COME9082.CLIAELIV",dbtype="char(10)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="COME9082.CODAELAN",dbtype="char(1)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="COME9082.NUMAELIG",dbtype="char(3)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="COME9082.LIGAETXT",dbtype="char(72)",nulls_allowed=yes))
+RETRIEVE(statement="PBSELECT( VERSION(400) TABLE(NAME=~"COME9082~" )  TABLE(NAME=~"COME9040~" ) COLUMN(NAME=~"COME9082.TIMEFCRE~") COLUMN(NAME=~"COME9082.CODEEMAJ~") COLUMN(NAME=~"COME9082.CLIAELIV~") COLUMN(NAME=~"COME9082.CODAELAN~") COLUMN(NAME=~"COME9082.NUMAELIG~") COLUMN(NAME=~"COME9082.LIGAETXT~")    JOIN (LEFT=~"COME9082.CLIAELIV~"    OP =~"=~"RIGHT=~"COME9040.NUMAECLF~" )) ")
+DESTINATION(name="COME9082",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no,initial_value="today")
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="CLIAELIV",dbtype="char(10)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="CODAELAN",dbtype="char(1)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="NUMAELIG",dbtype="char(3)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="LIGAETXT",dbtype="char(72)",nulls_allowed=yes))

@@ -1,0 +1,16 @@
+﻿$PBExportHeader$d_object_liste_client_livre.srd
+$PBExportComments$Contien la liste des clients livrés associés au client donneur d'ordre
+release 8;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="-1" )
+footer(height=0 color="-1" )
+detail(height=88 color="-1" )
+table(column=(type=char(10) updatewhereclause=yes name=cliaeliv dbname="COME9061.CLIAELIV" )
+ column=(type=char(10) updatewhereclause=yes name=abnaecll dbname="COME9061.ABNAECLL" )
+ column=(type=char(20) updatewhereclause=yes name=abvaecll dbname="COME9061.ABVAECLL" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9061~" ) COLUMN(NAME=~"COME9061.CLIAELIV~") COLUMN(NAME=~"COME9061.ABNAECLL~") COLUMN(NAME=~"COME9061.ABVAECLL~")WHERE(    EXP1 =~"COME9061.CODEEMAJ~"   OP =~"<>~"    EXP2 =~"'A'~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"COME9061.NUMAECLF~"   OP =~"=~"    EXP2 =~":as_client~" ) ) ARG(NAME = ~"as_client~" TYPE = string) " arguments=(("as_client", string)) )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="0" y="0" height="76" width="320" format="[general]" html.valueishtml="0"  name=cliaeliv visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="320" y="0" height="76" width="320" format="[general]" html.valueishtml="0"  name=abnaecll visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="640" y="0" height="76" width="640" format="[general]" html.valueishtml="0"  name=abvaecll visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

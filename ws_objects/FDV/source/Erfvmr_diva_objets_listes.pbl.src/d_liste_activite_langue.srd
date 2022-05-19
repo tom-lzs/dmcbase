@@ -1,0 +1,17 @@
+﻿$PBExportHeader$d_liste_activite_langue.srd
+$PBExportComments$Contient la liste des activités
+release 8;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=76 color="12632256" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=64 color="536870912" )
+table(column=(type=char(20) updatewhereclause=yes name=actae000 dbname="COME9PRM.CODPARAM" )
+ column=(type=char(40) updatewhereclause=yes name=lacaetiv dbname="COME9PRM.VALPARAM" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9PRM~" ) COLUMN(NAME=~"COME9PRM.CODPARAM~") COLUMN(NAME=~"COME9PRM.VALPARAM~")WHERE(    EXP1 =~"COME9PRM.CODTAB~"   OP =~"=~"    EXP2 =~"'COME9006'~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"COME9PRM.CODLANG~"   OP =~"=~"    EXP2 =~":as_langue~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"COME9PRM.CODPARAM~"   OP =~"<>~"    EXP2 =~"'?'~" ) ) ARG(NAME = ~"as_langue~" TYPE = string) " arguments=(("as_langue", string)) )
+text(band=header alignment="2" text="*Activité*" border="0" color="33554432" x="14" y="4" height="56" width="873" html.valueishtml="0"  name=actae000_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+line(band=header x1="0" y1="72" x2="1417" y2="72"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="233" y="0" height="56" width="919" format="[general]" html.valueishtml="0"  name=lacaetiv visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="33554432" x="18" y="0" height="56" width="197" format="[general]" html.valueishtml="0"  name=actae000 visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

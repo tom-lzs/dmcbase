@@ -1,0 +1,200 @@
+﻿$PBExportHeader$m_sheet_multi_pt.srm
+$PBExportComments$Ancêtre des menus associés aux fenêtres de mise à jour multi-lignes
+forward
+global type m_sheet_multi_pt from m_a
+end type
+end forward
+
+global type m_sheet_multi_pt from m_a
+end type
+global m_sheet_multi_pt m_sheet_multi_pt
+
+on m_sheet_multi_pt.create
+m_sheet_multi_pt=this
+call m_a::create
+end on
+
+on m_sheet_multi_pt.destroy
+call m_a::destroy
+end on
+
+on m_file.create
+call m_a`m_file::create
+end on
+
+on m_new::clicked;// Override!
+
+parentwindow.TriggerEvent ("ue_insert")
+end on
+
+on m_new.create
+call m_a`m_new::create
+this.Text="&Insert"
+this.ToolBarItemText="Insert"
+end on
+
+on m_open.create
+call m_a`m_open::create
+end on
+
+on m_delete.create
+call m_a`m_delete::create
+end on
+
+on m_close.create
+call m_a`m_close::create
+end on
+
+on m_-pt.create
+call m_a`m_-pt::create
+end on
+
+on m_save.create
+call m_a`m_save::create
+end on
+
+on m_saveas.create
+call m_a`m_saveas::create
+end on
+
+on m_-pt1.create
+call m_a`m_-pt1::create
+end on
+
+on m_print.create
+call m_a`m_print::create
+end on
+
+on m_printsetup.create
+call m_a`m_printsetup::create
+end on
+
+on m_-pt2.create
+call m_a`m_-pt2::create
+end on
+
+on m_exit.create
+call m_a`m_exit::create
+this.ToolBarItemVisible=false
+end on
+
+on m_edit.create
+call m_a`m_edit::create
+end on
+
+on m_undo.create
+call m_a`m_undo::create
+end on
+
+on m_-pt7.create
+call m_a`m_-pt7::create
+end on
+
+on m_cut.create
+call m_a`m_cut::create
+end on
+
+on m_copy.create
+call m_a`m_copy::create
+end on
+
+on m_paste.create
+call m_a`m_paste::create
+end on
+
+on m_clear.create
+call m_a`m_clear::create
+end on
+
+on m_selectall.create
+call m_a`m_selectall::create
+end on
+
+on m_item1.create
+call m_a`m_item1::create
+end on
+
+on m_item2.create
+call m_a`m_item2::create
+end on
+
+on m_item3.create
+call m_a`m_item3::create
+end on
+
+on m_item4.create
+call m_a`m_item4::create
+end on
+
+on m_item5.create
+call m_a`m_item5::create
+end on
+
+on m_window.create
+call m_a`m_window::create
+end on
+
+on m_tile.create
+call m_a`m_tile::create
+end on
+
+on m_layer.create
+call m_a`m_layer::create
+end on
+
+on m_cascade.create
+call m_a`m_cascade::create
+end on
+
+on m_-pt11.create
+call m_a`m_-pt11::create
+end on
+
+on m_arrangeicons.create
+call m_a`m_arrangeicons::create
+end on
+
+on m_-pt3.create
+call m_a`m_-pt3::create
+end on
+
+on m_toolbar.create
+call m_a`m_toolbar::create
+end on
+
+on m_-pt5.create
+call m_a`m_-pt5::create
+end on
+
+on m_panel.create
+call m_a`m_panel::create
+end on
+
+on m_help.create
+call m_a`m_help::create
+end on
+
+on m_index.create
+call m_a`m_index::create
+end on
+
+on m_-pt4.create
+call m_a`m_-pt4::create
+end on
+
+on m_gettingstarted.create
+call m_a`m_gettingstarted::create
+end on
+
+on m_search.create
+call m_a`m_search::create
+end on
+
+on m_-pt6.create
+call m_a`m_-pt6::create
+end on
+
+on m_about.create
+call m_a`m_about::create
+end on
+

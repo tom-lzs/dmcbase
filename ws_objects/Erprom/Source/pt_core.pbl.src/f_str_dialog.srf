@@ -1,0 +1,40 @@
+﻿$PBExportHeader$f_str_dialog.srf
+$PBExportComments$Affiche/manipule une chaîne dans une fenêtre de dialogue
+global type f_str_dialog from function_object
+end type
+
+forward prototypes
+global function string f_str_dialog (string a_s_item)
+end prototypes
+
+global function string f_str_dialog (string a_s_item);// Open response Window to display/manipulate string parameter.
+
+str_pass str_pass
+
+
+// Display passed String in Response Window.
+
+message.fnv_push ()
+
+str_pass.s [1] = a_s_item
+
+message.fnv_set_str_pass (str_pass)
+
+Open (w_str_dialog)
+
+
+// Return string which was returned from the Response Window.
+
+str_pass = message.fnv_get_str_pass ()
+
+message.fnv_pop ()
+
+IF UpperBound (str_pass.s) > 0 THEN
+	IF Len (Trim (str_pass.s [1])) > 0 THEN
+		a_s_item = str_pass.s [1]
+	END IF
+END IF
+
+RETURN a_s_item
+end function
+

@@ -1,0 +1,15 @@
+﻿$PBExportHeader$d_impression_texte.srd
+$PBExportComments$Contient les données du texte à imprimer
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=5 HTMLDW=no print.documentname="" print.orientation = 2 print.margin.left = 110 print.margin.right = 50 print.margin.top = 10 print.margin.bottom = 10 print.paper.source = 0 print.paper.size = 9 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=504 color="536870912"  height.autosize=yes)
+table(column=(type=char(10) updatewhereclause=yes name=a dbname="a" )
+ unbound = "yes"arguments=(("as_cle", string),("as_langue", string)) )
+report(band=detail dataobject="d_entete_saisie_cde_impress" x="27" y="228" height="120" width="2921" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_cle ")) trail_footer = yes  name=dw_entete visible="1"  slideup=directlyabove )
+report(band=detail dataobject="d_texte_come9086" x="375" y="380" height="120" width="2341" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_cle "),(" as_langue ")) trail_footer = yes  name=dw_message visible="1"  slideup=directlyabove )
+text(band=detail alignment="0" text="" border="1" color="0" x="59" y="20" height="76" width="2245" html.valueishtml="0"  name=t_titre visible="1"  font.face="Arial" font.height="-11" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression="String(today())"border="0" color="0" x="2377" y="28" height="52" width="498" format="[General]" html.valueishtml="0"  name=date_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

@@ -1,0 +1,105 @@
+﻿$PBExportHeader$m_multi_ligne.srm
+$PBExportComments$Menu des fenêtre de gestion multi lignes
+forward
+global type m_multi_ligne from m_sheet_multi
+end type
+end forward
+
+global type m_multi_ligne from m_sheet_multi
+end type
+global m_multi_ligne m_multi_ligne
+
+on m_multi_ligne.create
+m_multi_ligne=this
+call m_sheet_multi::create
+end on
+
+on m_multi_ligne.destroy
+call m_sheet_multi::destroy
+end on
+
+on m_open.create
+call m_sheet_multi`m_open::create
+this.Visible=false
+this.ToolBarItemVisible=false
+end on
+
+on m_saveas.create
+call m_sheet_multi`m_saveas::create
+this.Visible=false
+end on
+
+on m_-pt1.create
+call m_sheet_multi`m_-pt1::create
+this.Visible=false
+end on
+
+on m_print.create
+call m_sheet_multi`m_print::create
+this.Visible=false
+this.ToolBarItemVisible=false
+end on
+
+on m_printsetup.create
+call m_sheet_multi`m_printsetup::create
+this.Visible=false
+this.ToolBarItemVisible=false
+end on
+
+on m_tile.create
+call m_sheet_multi`m_tile::create
+this.ToolBarItemVisible=false
+end on
+
+on m_layer.create
+call m_sheet_multi`m_layer::create
+this.Visible=false
+this.ToolBarItemVisible=false
+end on
+
+on m_cascade.create
+call m_sheet_multi`m_cascade::create
+this.ToolBarItemVisible=false
+end on
+
+on m_-pt11.create
+call m_sheet_multi`m_-pt11::create
+this.Visible=false
+end on
+
+on m_arrangeicons.create
+call m_sheet_multi`m_arrangeicons::create
+this.Visible=false
+this.ToolBarItemVisible=false
+end on
+
+on m_-pt3.create
+call m_sheet_multi`m_-pt3::create
+this.Visible=false
+end on
+
+on m_toolbar.create
+call m_sheet_multi`m_toolbar::create
+this.Visible=false
+end on
+
+on m_-pt5.create
+call m_sheet_multi`m_-pt5::create
+this.Visible=false
+end on
+
+on m_panel.create
+call m_sheet_multi`m_panel::create
+this.Visible=false
+end on
+
+on m_help.create
+call m_sheet_multi`m_help::create
+this.Visible=false
+end on
+
+on m_index.create
+call m_sheet_multi`m_index::create
+this.ToolBarItemVisible=false
+end on
+

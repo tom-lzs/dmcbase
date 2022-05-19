@@ -1,0 +1,14 @@
+﻿$PBExportHeader$come9cdt_cde_validee.srp
+$PBExportComments$Pipeline de creation de la table des commandes intégrées
+PIPELINE(source_connect=SFREAP02 de010fdv,destination_connect=Localhost FDV,type=append,commit=100,errors=100,keyname="come9cdt")
+SOURCE(name="COME90PA",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=yes)
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=yes)
+ COLUMN(type=char,name="CVIAEMAJ",dbtype="char(3)",nulls_allowed=yes)
+ COLUMN(type=char,name="NUMAECDE",dbtype="char(6)",key=yes,nulls_allowed=no)
+ COLUMN(type=datetime,name="DTSAECDE",dbtype="datetime",nulls_allowed=yes))
+RETRIEVE(statement="PBSELECT( VERSION(400) TABLE(NAME=~"COME90PA~" ) COLUMN(NAME=~"COME90PA.TIMEFCRE~") COLUMN(NAME=~"COME90PA.CODEEMAJ~") COLUMN(NAME=~"COME90PA.CVIAEMAJ~") COLUMN(NAME=~"COME90PA.NUMAECDE~") COLUMN(NAME=~"COME90PA.DTSAECDE~")WHERE(    EXP1 =~"COME90PA.CETAECDE~"   OP =~"=~"    EXP2 =~"'V'~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"COME90PA.NUMAECDE~"   OP =~"not in~"    EXP2 =~"(SELECT COME9CDT.NUMAECDE FROM COME9CDT GROUP BY COME9CDT.NUMAECDE )~" ) ) ")
+DESTINATION(name="come9cdt",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=yes)
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=yes)
+ COLUMN(type=char,name="CODEEVIS",dbtype="char(3)",key=yes,nulls_allowed=yes)
+ COLUMN(type=char,name="NUMAECDE",dbtype="char(6)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=datetime,name="DTSAECDE",dbtype="datetime",key=yes,nulls_allowed=yes))

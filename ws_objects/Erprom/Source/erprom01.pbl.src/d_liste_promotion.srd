@@ -1,0 +1,20 @@
+﻿$PBExportHeader$d_liste_promotion.srd
+$PBExportComments$Liste des fonctions suivant les critères de sélection sur les données générales des promo (Période, code promo)
+release 4;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no )
+header(height=121 color="8421376" )
+summary(height=1 color="536870912" )
+footer(height=1 color="536870912" )
+detail(height=77 color="536870912" )
+table(column=(type=char(4) key=yes name=npraeact dbname="COME9033.NPRAEACT" )
+ column=(type=char(44) name=lpraeact dbname="COME9033.LPRAEACT" )
+ column=(type=datetime name=dtdaeva0 dbname="COME9033.DTDAEVA0" )
+ column=(type=datetime name=dtfaeva0 dbname="COME9033.DTFAEVA0" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9033~" ) COLUMN(NAME=~"COME9033.NPRAEACT~") COLUMN(NAME=~"COME9033.LPRAEACT~") COLUMN(NAME=~"COME9033.DTDAEVA0~") COLUMN(NAME=~"COME9033.DTFAEVA0~")WHERE( EXP1 =~"COME9033.NPRAEACT~" OP =~"like~" EXP2 =~":a_s_npraeact~" LOGIC =~"and~" ) WHERE( EXP1 =~"COME9033.LPRAEACT~" OP =~"like~" EXP2 =~":a_s_lpraeact~" LOGIC =~"and~" ) WHERE( EXP1 =~"COME9033.DTDAEVA0~" OP =~">=~" EXP2 =~":a_s_dtdaeva0~" LOGIC =~"and~" ) WHERE( EXP1 =~"COME9033.DTFAEVA0~" OP =~"<=~" EXP2 =~":a_s_dtfaeva0~" LOGIC =~"and~" ) WHERE( EXP1 =~"COME9033.CODEEMAJ~" OP =~"<>~" EXP2 =~"'A'~" ) ) ORDER(NAME=~"COME9033.NPRAEACT~" ASC=no) ARG(NAME = ~"a_s_npraeact~" TYPE = string) ARG(NAME = ~"a_s_lpraeact~" TYPE = string) ARG(NAME = ~"a_s_dtdaeva0~" TYPE = date) ARG(NAME = ~"a_s_dtfaeva0~" TYPE = date) " update="COME9033" updatewhere=0 updatekeyinplace=no arguments=(("a_s_npraeact", string),("a_s_lpraeact", string),("a_s_dtdaeva0", date),("a_s_dtfaeva0", date)) )
+text(band=header alignment="2" text="Date validité 
+ Du                 AU"border="0" color="16777215" x="1729" y="8" height="113" width="380"  name=dtdaeva0_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Promotion"border="0" color="16777215" x="403" y="8" height="57" width="266"  name=lpraeact_t  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="16711680" x="37" y="4" height="65" width="138" format="[general]"  name=npraeact edit.limit=4 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="32768" x="206" y="4" height="65" width="1349" format="[general]"  name=lpraeact edit.limit=44 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="1591" y="4" height="69" width="284" format="[shortdate] [time]"  name=dtdaeva0 edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="1934" y="4" height="65" width="298" format="[shortdate] [time]"  name=dtfaeva0 edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes  font.face="Arial" font.height="-9" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )

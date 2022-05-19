@@ -1,0 +1,10 @@
+﻿$PBExportHeader$str_tab.srs
+$PBExportComments$Structure de construction dinamique des onglets
+global type str_tab from structure
+	string		text
+	string		picture
+	string		object
+	string		powertiptext
+	graphicobject		assoc_object
+end type
+

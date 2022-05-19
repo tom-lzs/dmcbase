@@ -1,0 +1,22 @@
+﻿$PBExportHeader$d_entete_carnet_cde.srd
+$PBExportComments$Contient la liste des commandes appartenant au carnet de commande du client
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=68 color="8388608" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=72 color="536870912" )
+table(column=(type=char(1) update=yes updatewhereclause=yes name=codeemaj dbname="COME9055.CODEEMAJ" )
+ column=(type=char(10) update=yes updatewhereclause=yes key=yes name=numaeclf dbname="COME9055.NUMAECLF" )
+ column=(type=char(10) update=yes updatewhereclause=yes key=yes name=numaecde dbname="COME9055.NUMAECDE" )
+ column=(type=char(35) update=yes updatewhereclause=yes name=refaecli dbname="COME9055.REFAECLI" )
+ column=(type=datetime update=yes updatewhereclause=yes name=dataecde dbname="COME9055.DATAECDE" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9055~" ) COLUMN(NAME=~"COME9055.CODEEMAJ~") COLUMN(NAME=~"COME9055.NUMAECLF~") COLUMN(NAME=~"COME9055.NUMAECDE~") COLUMN(NAME=~"COME9055.REFAECLI~") COLUMN(NAME=~"COME9055.DATAECDE~")WHERE(    EXP1 =~"COME9055.NUMAECLF~"   OP =~"=~"    EXP2 =~":as_client~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"COME9055.CODEEMAJ~"   OP =~"<>~"    EXP2 =~"'A'~" ) ) ARG(NAME = ~"as_client~" TYPE = string) " update="COME9055" updatewhere=1 updatekeyinplace=no arguments=(("as_client", string))  sort="numaeclf A " )
+text(band=header alignment="2" text="N° Cde" border="0" color="16777215" x="41" y="4" height="56" width="302" html.valueishtml="0"  name=numaecde_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Référence" border="0" color="16777215" x="425" y="8" height="56" width="987" html.valueishtml="0"  name=refaecli_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Date Cde" border="0" color="16777215" x="1495" y="0" height="56" width="325" html.valueishtml="0"  name=dataecde_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="16711680" x="37" y="0" height="60" width="302" format="[general]" html.valueishtml="0"  name=numaecde visible="1" edit.limit=10 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="33554432" x="411" y="0" height="60" width="987" format="[general]" html.valueishtml="0"  name=refaecli visible="1" edit.limit=35 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=32766 border="0" color="33554432" x="1568" y="0" height="60" width="251" format="[shortdate] [time]" html.valueishtml="0"  name=dataecde visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

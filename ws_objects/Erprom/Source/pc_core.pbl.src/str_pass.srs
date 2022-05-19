@@ -1,0 +1,20 @@
+﻿$PBExportHeader$str_pass.srs
+$PBExportComments$Generic Window parameter passing structure
+global type str_pass from structure
+    powerobject po_caller
+    string s_win_title
+    string s_dataobject
+    string s_win_parms
+    string s_open_style
+    transaction tr_trans
+    window w_frame
+    integer i_idx
+    string s_action
+    string s[]
+    double d[]
+    boolean b[]
+    datetime dt[]
+    date dates[]
+    powerobject po[]
+end type
+

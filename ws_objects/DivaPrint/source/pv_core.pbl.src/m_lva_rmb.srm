@@ -1,0 +1,90 @@
+﻿$PBExportHeader$m_lva_rmb.srm
+$PBExportComments$Menu Propriété pour les ListView .
+forward
+global type m_lva_rmb from m_lva_rmb_pt
+end type
+end forward
+
+global type m_lva_rmb from m_lva_rmb_pt
+end type
+global m_lva_rmb m_lva_rmb
+
+on m_lva_rmb.create
+m_lva_rmb=this
+call m_lva_rmb_pt::create
+end on
+
+on m_lva_rmb.destroy
+call m_lva_rmb_pt::destroy
+end on
+
+on m_properties.create
+call m_lva_rmb_pt`m_properties::create
+this.MergeOption=Exclude!
+end on
+
+on m_view.create
+call m_lva_rmb_pt`m_view::create
+this.MergeOption=Exclude!
+end on
+
+on m_largeicon.create
+call m_lva_rmb_pt`m_largeicon::create
+this.MergeOption=Exclude!
+end on
+
+on m_smallicon.create
+call m_lva_rmb_pt`m_smallicon::create
+this.MergeOption=Exclude!
+end on
+
+on m_list.create
+call m_lva_rmb_pt`m_list::create
+this.MergeOption=Exclude!
+end on
+
+on m_details.create
+call m_lva_rmb_pt`m_details::create
+this.MergeOption=Exclude!
+end on
+
+on m_sort.create
+call m_lva_rmb_pt`m_sort::create
+this.MergeOption=Exclude!
+end on
+
+on m_ascending.create
+call m_lva_rmb_pt`m_ascending::create
+this.MergeOption=Exclude!
+end on
+
+on m_descending.create
+call m_lva_rmb_pt`m_descending::create
+this.MergeOption=Exclude!
+end on
+
+on m_-.create
+call m_lva_rmb_pt`m_-::create
+this.MergeOption=Exclude!
+end on
+
+on m_edit.create
+call m_lva_rmb_pt`m_edit::create
+this.MergeOption=Exclude!
+end on
+
+on m_delete.create
+call m_lva_rmb_pt`m_delete::create
+this.MergeOption=Exclude!
+end on
+
+on m_-1.create
+call m_lva_rmb_pt`m_-1::create
+this.MergeOption=Exclude!
+end on
+
+on m_showheader.create
+call m_lva_rmb_pt`m_showheader::create
+this.MergeOption=Exclude!
+end on
+

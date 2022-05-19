@@ -1,0 +1,15 @@
+﻿$PBExportHeader$d_impression_texte_come90pb.srd
+$PBExportComments$Contient les données pour impression du message associé à un commande
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=5 HTMLDW=no print.documentname="FDV  -  Message cde" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=704 color="536870912"  height.autosize=yes)
+table(column=(type=char(10) updatewhereclause=yes name=a dbname="a" )
+ unbound = "yes"arguments=(("as_cde", string),("as_code_langue", string)) )
+report(band=detail dataobject="d_entete_saisie_cde_impress" x="37" y="272" height="120" width="3026" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_cde "),(" as_code_langue ")) trail_footer = yes  name=dw_entete visible="1"  slideup=directlyabove )
+report(band=detail dataobject="d_texte_come90pb" x="219" y="428" height="120" width="2720" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_cde ")) trail_footer = yes  name=dw_message visible="1"  slideup=directlyabove )
+text(band=detail alignment="2" text="Impression des messages liés à la commande" border="1" color="0" x="64" y="12" height="76" width="2139" html.valueishtml="0"  name=t_1  tag="NO_TEXT" visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression="String(today())"border="0" color="0" x="2272" y="28" height="52" width="498" format="[General]" html.valueishtml="0"  name=date_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

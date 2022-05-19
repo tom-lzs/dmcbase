@@ -1,0 +1,20 @@
+﻿$PBExportHeader$d_liste_article.srd
+$PBExportComments$Contient de la liste des articles
+release 8;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=72 color="8388608" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(18) updatewhereclause=yes name=artae000 dbname="COME9030.ARTAE000" )
+ column=(type=char(40) updatewhereclause=yes name=desaeref dbname="COME9PRM.VALPARAM" )
+ column=(type=decimal(2) updatewhereclause=yes name=priaeart dbname="priaeart" )
+ column=(type=decimal(2) updatewhereclause=yes name=uniaepar dbname="uniaepar" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9030~" )  TABLE(NAME=~"COME9PRM~" ) COLUMN(NAME=~"COME9030.ARTAE000~") COLUMN(NAME=~"COME9PRM.VALPARAM~") COMPUTE(NAME=~"0.00 as priaeart~") COMPUTE(NAME=~"0.00 as uniaepar~")    JOIN (LEFT=~"COME9030.ARTAE000~"    OP =~"=~"RIGHT=~"COME9PRM.CODPARAM~" )WHERE(    EXP1 =~"( ( COME9030.CODEEMAJ~"   OP =~"<>~"    EXP2 =~"'A' )~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"( COME9PRM.CODTAB~"   OP =~"=~"    EXP2 =~"'COME9030' ) )~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"COME9030.ARTAE000~"   OP =~"like~"    EXP2 =~":as_article~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"COME9PRM.VALPARAM~"   OP =~"like~"    EXP2 =~":as_designation~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"COME9PRM.CODLANG~"   OP =~"=~"    EXP2 =~":as_langue~" )  GROUP(NAME=~"COME9030.ARTAE000~") GROUP(NAME=~"COME9PRM.VALPARAM~")) ARG(NAME = ~"as_article~" TYPE = string)  ARG(NAME = ~"as_designation~" TYPE = string)  ARG(NAME = ~"as_langue~" TYPE = string) " arguments=(("as_article", string),("as_designation", string),("as_langue", string))  sort="artae000 A " )
+text(band=header alignment="2" text="*Article*" border="0" color="1090519039" x="27" y="8" height="52" width="457" html.valueishtml="0"  name=artae000_t visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="8388608" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="14" y="8" height="56" width="475" format="[general]" html.valueishtml="0"  name=artae000 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=3 alignment="0" tabsequence=32766 border="0" color="0" x="2533" y="0" height="56" width="992" format="[general]" html.valueishtml="0"  name=priaeart visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=4 alignment="0" tabsequence=32766 border="0" color="0" x="3543" y="0" height="56" width="992" format="[general]" html.valueishtml="0"  name=uniaepar visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="4535" y="0" height="56" width="923" format="[general]" html.valueishtml="0"  name=desaeref visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

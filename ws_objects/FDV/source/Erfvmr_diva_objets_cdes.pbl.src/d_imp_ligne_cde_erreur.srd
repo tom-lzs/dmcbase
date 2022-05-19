@@ -1,0 +1,70 @@
+﻿$PBExportHeader$d_imp_ligne_cde_erreur.srd
+$PBExportComments$Contient les lignes des commandes en anomalie formatter pour editer le document interne
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 10 print.margin.right = 10 print.margin.top = 10 print.margin.bottom = 10 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=76 color="12632256" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=60 color="536870912" )
+table(column=(type=char(6) update=yes updatewhereclause=yes key=yes name=numaecde dbname="COME90PC.NUMAECDE" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=ctyaesai dbname="COME90PC.CTYAESAI" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=mtlaehtt dbname="COME90PC.MTLAEHTT" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=crfaeerr dbname="COME90PC.CRFAEERR" )
+ column=(type=char(18) update=yes updatewhereclause=yes name=artae000 dbname="COME90PC.ARTAE000" )
+ column=(type=char(8) update=yes updatewhereclause=yes name=dimaeart dbname="COME90PC.DIMAEART" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=qteaeuve dbname="COME90PC.QTEAEUVE" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=proaegra dbname="COME90PC.PROAEGRA" values="	G/	P" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=tauaerli dbname="COME90PC.TAUAERLI" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=npraeact dbname="COME90PC.NPRAEACT" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=taraeecv dbname="COME90PC.TARAEECV" )
+ column=(type=datetime update=yes updatewhereclause=yes name=dataepri dbname="COME90PC.DATAEPRI" )
+ column=(type=char(4) update=yes updatewhereclause=yes name=codaeech dbname="COME90PC.CODAEECH" )
+ column=(type=datetime update=yes updatewhereclause=yes name=dtsaeliv dbname="COME90PC.DTSAELIV" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=typaesai dbname="COME90PC.TYPAESAI" )
+ column=(type=char(3) update=yes updatewhereclause=yes name=codaectg dbname="COME90PC.CODAECTG" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=numaegrf dbname="COME90PC.NUMAEGRF" )
+ column=(type=char(10) update=yes updatewhereclause=yes name=cmdaepai dbname="COME90PC.CMDAEPAI" )
+ column=(type=char(5) update=yes updatewhereclause=yes key=yes name=nseef005 dbname="COME90PC.NSEEF005" )
+ column=(type=datetime update=yes updatewhereclause=yes name=timefcre dbname="COME90PC.TIMEFCRE" )
+ column=(type=char(1) update=yes updatewhereclause=yes name=codeemaj dbname="COME90PC.CODEEMAJ" )
+ column=(type=decimal(2) update=yes updatewhereclause=yes name=mnraepr1 dbname="COME90PC.MNRAEPR1" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME90PC~" ) COLUMN(NAME=~"COME90PC.NUMAECDE~") COLUMN(NAME=~"COME90PC.CTYAESAI~") COLUMN(NAME=~"COME90PC.MTLAEHTT~") COLUMN(NAME=~"COME90PC.CRFAEERR~") COLUMN(NAME=~"COME90PC.ARTAE000~") COLUMN(NAME=~"COME90PC.DIMAEART~") COLUMN(NAME=~"COME90PC.QTEAEUVE~") COLUMN(NAME=~"COME90PC.PROAEGRA~") COLUMN(NAME=~"COME90PC.TAUAERLI~") COLUMN(NAME=~"COME90PC.NPRAEACT~") COLUMN(NAME=~"COME90PC.TARAEECV~") COLUMN(NAME=~"COME90PC.DATAEPRI~") COLUMN(NAME=~"COME90PC.CODAEECH~") COLUMN(NAME=~"COME90PC.DTSAELIV~") COLUMN(NAME=~"COME90PC.TYPAESAI~") COLUMN(NAME=~"COME90PC.CODAECTG~") COLUMN(NAME=~"COME90PC.NUMAEGRF~") COLUMN(NAME=~"COME90PC.CMDAEPAI~") COLUMN(NAME=~"COME90PC.NSEEF005~") COLUMN(NAME=~"COME90PC.TIMEFCRE~") COLUMN(NAME=~"COME90PC.CODEEMAJ~") COLUMN(NAME=~"COME90PC.MNRAEPR1~")WHERE(    EXP1 =~"COME90PC.NUMAECDE~"   OP =~"=~"    EXP2 =~":as_numcde~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"COME90PC.CODEEMAJ~"   OP =~"<>~"    EXP2 =~"'A'~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"COME90PC.CRFAEERR~"   OP =~">~"    EXP2 =~"'0'~" ) ) ARG(NAME = ~"as_numcde~" TYPE = string) " update="COME90PC" updatewhere=0 updatekeyinplace=no arguments=(("as_numcde", string))  sort="nseef005 A " )
+text(band=header alignment="2" text="*Article*" border="0" color="0" x="55" y="8" height="56" width="251" html.valueishtml="0"  name=artae000_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Dimension" border="0" color="0" x="498" y="8" height="56" width="283" html.valueishtml="0"  name=dimaeart_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="0" text="Quantite" border="0" color="0" x="800" y="8" height="56" width="238" html.valueishtml="0"  name=qteaeuve_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Tarif" border="0" color="0" x="1047" y="8" height="56" width="183" html.valueishtml="0"  name=taraeecv_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Dir " border="0" color="0" x="1285" y="12" height="56" width="160" html.valueishtml="0"  name=ctyaesai_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Remise" border="0" color="0" x="1673" y="8" height="56" width="201" html.valueishtml="0"  name=tauaerli_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Ech" border="0" color="0" x="1870" y="8" height="56" width="160" html.valueishtml="0"  name=codaeech_3_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Gra" border="0" color="0" x="2057" y="8" height="56" width="160" html.valueishtml="0"  name=proaegra_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Date liv" border="0" color="0" x="2231" y="8" height="56" width="238" html.valueishtml="0"  name=dtsaeliv_10_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Date prix" border="0" color="0" x="2510" y="8" height="56" width="274" html.valueishtml="0"  name=dataepri_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text=" Promo" border="0" color="0" x="1440" y="12" height="56" width="206" html.valueishtml="0"  name=npraeact_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+text(band=header alignment="2" text="Erreur" border="0" color="0" x="2816" y="8" height="56" width="320" html.valueishtml="0"  name=erreur_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="33554432" x="1312" y="0" height="52" width="78" format="[general]" html.valueishtml="0"  name=ctyaesai visible="1" edit.limit=1 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=12 alignment="0" tabsequence=32766 border="0" color="33554432" x="2519" y="4" height="52" width="247" format="[shortdate] [time]" html.valueishtml="0"  name=dataepri visible="1~tif( dataepri = date(~"01/01/1900~"),0, 1 )" editmask.required=yes editmask.mask="dd/mm/yy" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=10 alignment="0" tabsequence=32766 border="0" color="33554432" x="1458" y="4" height="52" width="128" format="[general]" html.valueishtml="0"  name=npraeact visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=11 alignment="1" tabsequence=32766 border="0" color="33554432" x="1015" y="0" height="52" width="233" format="[general]" html.valueishtml="0"  name=taraeecv visible="1" editmask.mask="###,###.00" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=8 alignment="0" tabsequence=32766 border="0" color="33554432" x="2112" y="4" height="52" width="55" format="[general]" html.valueishtml="0"  name=proaegra visible="0" checkbox.text="" checkbox.on="G" checkbox.off="P" checkbox.scale=no checkbox.threed=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=9 alignment="0" tabsequence=32766 border="0" color="33554432" x="1687" y="4" height="52" width="160" format="[general]" html.valueishtml="0"  name=tauaerli visible="1~tif( tauaerli = 0,0, 1 )" editmask.mask="###,##0.00" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=13 alignment="0" tabsequence=32766 border="0" color="33554432" x="1902" y="4" height="60" width="160" format="[general]" html.valueishtml="0"  name=codaeech visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=14 alignment="0" tabsequence=32766 border="0" color="33554432" x="2249" y="4" height="52" width="229" format="[shortdate] [time]" html.valueishtml="0"  name=dtsaeliv visible="1~tif( dtsaeliv = date(~"01/01/1900~"),0, 1 )" editmask.mask="dd/mm/yy" editmask.imemode=0 editmask.focusrectangle=no  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=5 alignment="0" tabsequence=10 border="4" color="33554432" x="27" y="4" height="52" width="485" format="[general]" html.valueishtml="0"  name=artae000 visible="1" edit.limit=18 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=6 alignment="0" tabsequence=20 border="4" color="33554432" x="539" y="0" height="52" width="219" format="[general]" html.valueishtml="0"  name=dimaeart visible="1" edit.limit=8 edit.case=upper edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=7 alignment="1" tabsequence=30 border="4" color="33554432" x="795" y="0" height="52" width="197" format="[general]" html.valueishtml="0"  name=qteaeuve visible="1" editmask.mask="#####0" editmask.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+compute(band=detail alignment="0" expression="if( crfaeerr = ~"1~", ~"Réf. Inex.~",
+if( crfaeerr = ~"2~", ~"Tarif Inex.~",
+if( crfaeerr = ~"3~", ~"Qte Inf. Mini~",
+if( crfaeerr = ~"4~", ~"Taille lot~",
+if ( crfaeerr = ~"5~" , ~"Tarif Cat Inex.~",
+if ( crfaeerr = ~"6~",  ~"Qté EDI Incorr~", 
+if ( crfaeerr = ~"7~",  ~"Qté UNC Incorr~", ~"  ~") ) )))))"border="0" color="16711680" x="2789" y="0" height="52" width="343" format="[GENERAL]" html.valueishtml="0"  name=compute_f visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+compute(band=detail alignment="0" expression="if( crfaeerr = ~"1~",   ~"No Exist Ref.~",
+if( crfaeerr = ~"2~",   ~"No Exist Price~",
+if( crfaeerr = ~"3~",   ~"Qty less Mini~",
+if( crfaeerr = ~"4~",   ~"Batch mini~",
+if ( crfaeerr = ~"5~" , ~"No Exist Price~",
+if ( crfaeerr = ~"6~",  ~"Qty EDI False~", 
+if ( crfaeerr = ~"7~",  ~"Qty CU False~", ~"  ~") ) )))))"border="0" color="16711680" x="2793" y="4" height="52" width="343" format="[GENERAL]" html.valueishtml="0"  name=compute_e visible="0"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

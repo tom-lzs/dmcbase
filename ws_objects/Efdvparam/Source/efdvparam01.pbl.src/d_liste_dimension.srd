@@ -1,0 +1,15 @@
+﻿$PBExportHeader$d_liste_dimension.srd
+$PBExportComments$Contient la liste des dimensions associees a l'article sélectionné
+release 8;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=84 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(8) updatewhereclause=yes name=dimaeart dbname="COME9030.DIMAEART" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9030~" ) COLUMN(NAME=~"COME9030.DIMAEART~")WHERE(    EXP1 =~"COME9030.ARTAE000~"   OP =~"=~"    EXP2 =~":as_artae000~" ) ) ORDER(NAME=~"COME9030.DIMAEART~" ASC=yes ) ARG(NAME = ~"as_artae000~" TYPE = string) " arguments=(("as_artae000", string)) )
+text(band=header alignment="2" text="Dimension" border="0" color="33554432" x="14" y="4" height="56" width="279" html.valueishtml="0"  name=dimaeart_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="8388608" x="32" y="4" height="60" width="247" format="[general]" html.valueishtml="0"  name=dimaeart visible="1" edit.limit=8 edit.case=any edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+line(band=header x1="9" y1="80" x2="315" y2="80"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="33554432"  background.mode="2" background.color="1073741824" )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

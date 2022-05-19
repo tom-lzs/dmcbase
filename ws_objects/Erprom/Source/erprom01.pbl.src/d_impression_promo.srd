@@ -1,0 +1,14 @@
+﻿$PBExportHeader$d_impression_promo.srd
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=5 HTMLDW=no print.documentname="Détail de la promotion" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=704 color="536870912"  height.autosize=yes)
+table(column=(type=char(10) updatewhereclause=yes name=a dbname="a" )
+ unbound = "yes"arguments=(("a_s_npraeact", string)) )
+report(band=detail dataobject="d_promo_condition" x="539" y="292" height="120" width="2094" border="0"  height.autosize=yes criteria="" nest_arguments=((" a_s_npraeact ")) trail_footer = yes  name=dw_1 visible="1"  slideup=directlyabove )
+report(band=detail dataobject="d_promo_entete" x="398" y="28" height="120" width="2569" border="0"  height.autosize=yes criteria="" nest_arguments=((" a_s_npraeact ")) trail_footer = yes  name=dw_2 visible="1"  slideup=directlyabove )
+report(band=detail dataobject="d_promo_gratuit" x="343" y="528" height="120" width="727" border="0"  height.autosize=yes criteria="" nest_arguments=((" a_s_npraeact ")) trail_footer = yes  name=dw_3 visible="1"  slideup=directlyabove )
+report(band=detail dataobject="d_promo_offert" x="1586" y="532" height="120" width="1353" border="0"  height.autosize=yes criteria="" nest_arguments=((" a_s_npraeact ")) trail_footer = yes  name=dw_4 visible="1"  slideup=directlyabove )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

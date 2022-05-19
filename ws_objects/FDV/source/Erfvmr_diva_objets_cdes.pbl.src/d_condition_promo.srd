@@ -1,0 +1,13 @@
+﻿$PBExportHeader$d_condition_promo.srd
+$PBExportComments$Contient le détail des conditions de la promotion sélectionnée
+release 8;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="-1" )
+footer(height=0 color="-1" )
+detail(height=72 color="-1" )
+table(column=(type=char(70) updatewhereclause=yes name=lpraeac1 dbname="COME9037.LPRAEAC1" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9037~" ) COLUMN(NAME=~"COME9037.LPRAEAC1~")WHERE(    EXP1 =~"COME9037.NPRAEACT~"   OP =~"=~"    EXP2 =~":a_s_promo~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"COME9037.CODEEMAJ~"   OP =~"<>~"    EXP2 =~"'A'~" ) ) ARG(NAME = ~"a_s_promo~" TYPE = string) " arguments=(("a_s_promo", string)) )
+text(band=header alignment="0" text="Conditions de la Promo" border="0" color="16777215" x="393" y="8" height="80" width="590" html.valueishtml="0"  name=t_1 visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="8388608" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="8388608" x="23" y="4" height="64" width="1733" format="[general]" html.valueishtml="0"  name=lpraeac1 visible="1" edit.limit=70 edit.case=any edit.focusrectangle=no edit.autoselect=yes edit.autohscroll=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+htmltable(border="0" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

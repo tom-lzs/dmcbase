@@ -1,0 +1,24 @@
+﻿$PBExportHeader$f_get_max_value_of_string.srf
+$PBExportComments$Permet de completer la longeur de la chaine de caractère passée en variable, de ' '. La longeur est également passée en paramète.
+global type f_get_max_value_of_string from function_object
+end type
+
+forward prototypes
+global function string f_get_max_value_of_string (integer as_longueur)
+end prototypes
+
+global function string f_get_max_value_of_string (integer as_longueur);/* <DESC> 
+     Permet de compléter le contenu de la chaine de caractère passé en paramétre et ceci en focntion de la taille de la zone également
+	 passé en paramètre.
+    </DESC> */
+String s_value
+integer i_compteur
+
+for i_compteur = 1 to as_longueur
+	s_value = s_value + MAX_STRING_VALUE
+next
+
+return s_value
+
+end function
+

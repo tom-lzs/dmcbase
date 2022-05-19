@@ -1,0 +1,7 @@
+﻿$PBExportHeader$strnv_object_set.srs
+$PBExportComments$Structure à usage réservé
+global type strnv_object_set from structure
+	string		s_set_name
+	strnv_member		strnv_member[]
+end type
+

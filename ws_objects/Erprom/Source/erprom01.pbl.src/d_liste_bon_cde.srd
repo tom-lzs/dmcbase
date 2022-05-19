@@ -1,0 +1,18 @@
+﻿$PBExportHeader$d_liste_bon_cde.srd
+$PBExportComments$Liste des références en bon de commande
+release 8;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=84 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=76 color="536870912" )
+table(column=(type=char(18) updatewhereclause=yes name=artae000 dbname="COME9030.ARTAE000" )
+ column=(type=char(40) updatewhereclause=yes name=desaeref dbname="COME9030.DESAEREF" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9030~" ) COLUMN(NAME=~"COME9030.ARTAE000~") COLUMN(NAME=~"COME9030.DESAEREF~")WHERE(    EXP1 =~"COME9030.CODEEMAJ~"   OP =~"<>~"    EXP2 =~"'A'~" )  GROUP(NAME=~"COME9030.ARTAE000~") GROUP(NAME=~"COME9030.DESAEREF~")) "  sort="artae000 A " )
+line(band=header x1="0" y1="72" x2="1906" y2="72"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="1" background.color="553648127" )
+text(band=header alignment="2" text="Article" border="0" color="0" x="119" y="8" height="52" width="197" html.valueishtml="0"  name=artae000_t visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+text(band=header alignment="2" text="Libellé" border="0" color="0" x="1019" y="12" height="52" width="201" html.valueishtml="0"  name=libaebcd_t visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="1" background.color="536870912" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="0" x="5" y="4" height="56" width="576" html.valueishtml="0"  name=artae000 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="626" y="0" height="64" width="1280" html.valueishtml="0"  name=desaeref visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+htmltable(border="0" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

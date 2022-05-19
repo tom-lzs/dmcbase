@@ -1,0 +1,590 @@
+﻿$PBExportHeader$m_frame_pt.srm
+$PBExportComments$Ancêtre des menus associés à une fenêtre MDI Frame
+forward
+global type m_frame_pt from m_a
+end type
+end forward
+
+global type m_frame_pt from m_a
+end type
+global m_frame_pt m_frame_pt
+
+forward prototypes
+public function integer fm_active_frame (string a_s_event)
+end prototypes
+
+public function integer fm_active_frame (string a_s_event);// ----------------------------------
+// DECLARATION DES VARIABLES LOCALES
+// ---------------------------------- 
+	Window		w_active_sheet
+	Integer		i_trigger_event
+
+// ===========================================================
+// DECLENCHEMENT DE L'EVENEMENT AU NIVEAU DE LA FENÊTRE ACTIVE
+// ===========================================================
+	w_active_sheet = g_w_frame.GetActiveSheet ()
+
+	IF IsValid (w_active_sheet) THEN
+		// -------------------------------------------------------
+		// L'évènement existe au niveau de la fenêtre active 
+		// -------------------------------------------------------
+		i_trigger_event = w_active_sheet.TriggerEvent (a_s_event)
+	
+		// -------------------------------------------------------
+		// L'évènement n'existe pas au niveau de la fenêtre active
+		// -------------------------------------------------------
+		IF i_trigger_event = -1 THEN
+			RETURN -1
+		ELSE
+			RETURN 0
+		END IF
+
+	ELSE
+		// -------------------------------------------------------
+		// Aucune fenêtre n'est active
+		// -------------------------------------------------------
+			RETURN -1
+	END IF
+end function
+
+on m_frame_pt.create
+m_frame_pt=this
+call super::create
+end on
+
+on m_frame_pt.destroy
+call super::destroy
+end on
+
+type m_file from m_a`m_file within m_frame_pt
+end type
+
+on m_file.create
+call super::create
+end on
+
+on m_file.destroy
+call super::destroy
+end on
+
+type m_new from m_a`m_new within m_file
+end type
+
+on m_new.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_new.destroy
+call super::destroy
+end on
+
+type m_open from m_a`m_open within m_file
+end type
+
+on m_open.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_open.destroy
+call super::destroy
+end on
+
+type m_delete from m_a`m_delete within m_file
+end type
+
+on m_delete.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_delete.destroy
+call super::destroy
+end on
+
+type m_close from m_a`m_close within m_file
+end type
+
+on m_close.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_close.destroy
+call super::destroy
+end on
+
+type m_-pt from m_a`m_-pt within m_file
+end type
+
+on m_-pt.create
+call super::create
+this.visible = false
+end on
+
+on m_-pt.destroy
+call super::destroy
+end on
+
+type m_save from m_a`m_save within m_file
+end type
+
+on m_save.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_save.destroy
+call super::destroy
+end on
+
+type m_saveas from m_a`m_saveas within m_file
+end type
+
+on m_saveas.create
+call super::create
+this.visible = false
+end on
+
+on m_saveas.destroy
+call super::destroy
+end on
+
+type m_-pt1 from m_a`m_-pt1 within m_file
+end type
+
+on m_-pt1.create
+call super::create
+this.visible = false
+end on
+
+on m_-pt1.destroy
+call super::destroy
+end on
+
+type m_print from m_a`m_print within m_file
+end type
+
+on m_print.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_print.destroy
+call super::destroy
+end on
+
+event m_print::clicked;call super::clicked;fm_active_frame("ue_print")
+end event
+
+type m_printpreview from m_a`m_printpreview within m_file
+end type
+
+on m_printpreview.create
+call super::create
+end on
+
+on m_printpreview.destroy
+call super::destroy
+end on
+
+event m_printpreview::clicked;call super::clicked;fm_active_frame("ue_printpreview")
+end event
+
+type m_printsetup from m_a`m_printsetup within m_file
+end type
+
+on m_printsetup.create
+call super::create
+this.visible = false
+end on
+
+on m_printsetup.destroy
+call super::destroy
+end on
+
+type m_-pt2 from m_a`m_-pt2 within m_file
+end type
+
+on m_-pt2.create
+call super::create
+this.visible = false
+end on
+
+on m_-pt2.destroy
+call super::destroy
+end on
+
+type m_exit from m_a`m_exit within m_file
+end type
+
+on m_exit.create
+call super::create
+end on
+
+on m_exit.destroy
+call super::destroy
+end on
+
+type m_edit from m_a`m_edit within m_frame_pt
+end type
+
+on m_edit.create
+call super::create
+end on
+
+on m_edit.destroy
+call super::destroy
+end on
+
+type m_undo from m_a`m_undo within m_edit
+end type
+
+on m_undo.create
+call super::create
+end on
+
+on m_undo.destroy
+call super::destroy
+end on
+
+type m_-pt7 from m_a`m_-pt7 within m_edit
+end type
+
+on m_-pt7.create
+call super::create
+end on
+
+on m_-pt7.destroy
+call super::destroy
+end on
+
+type m_cut from m_a`m_cut within m_edit
+end type
+
+on m_cut.create
+call super::create
+end on
+
+on m_cut.destroy
+call super::destroy
+end on
+
+type m_copy from m_a`m_copy within m_edit
+end type
+
+on m_copy.create
+call super::create
+end on
+
+on m_copy.destroy
+call super::destroy
+end on
+
+type m_paste from m_a`m_paste within m_edit
+end type
+
+on m_paste.create
+call super::create
+end on
+
+on m_paste.destroy
+call super::destroy
+end on
+
+type m_clear from m_a`m_clear within m_edit
+end type
+
+on m_clear.create
+call super::create
+end on
+
+on m_clear.destroy
+call super::destroy
+end on
+
+type m_selectall from m_a`m_selectall within m_edit
+end type
+
+on m_selectall.create
+call super::create
+end on
+
+on m_selectall.destroy
+call super::destroy
+end on
+
+type m_item1 from m_a`m_item1 within m_frame_pt
+end type
+
+on m_item1.create
+call super::create
+end on
+
+on m_item1.destroy
+call super::destroy
+end on
+
+type m_item2 from m_a`m_item2 within m_frame_pt
+end type
+
+on m_item2.create
+call super::create
+end on
+
+on m_item2.destroy
+call super::destroy
+end on
+
+type m_item3 from m_a`m_item3 within m_frame_pt
+end type
+
+on m_item3.create
+call super::create
+end on
+
+on m_item3.destroy
+call super::destroy
+end on
+
+type m_item4 from m_a`m_item4 within m_frame_pt
+end type
+
+on m_item4.create
+call super::create
+end on
+
+on m_item4.destroy
+call super::destroy
+end on
+
+type m_item5 from m_a`m_item5 within m_frame_pt
+end type
+
+on m_item5.create
+call super::create
+end on
+
+on m_item5.destroy
+call super::destroy
+end on
+
+type m_window from m_a`m_window within m_frame_pt
+end type
+
+on m_window.create
+call super::create
+end on
+
+on m_window.destroy
+call super::destroy
+end on
+
+type m_tile from m_a`m_tile within m_window
+end type
+
+on m_tile.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_tile.destroy
+call super::destroy
+end on
+
+type m_horizontal from m_a`m_horizontal within m_window
+end type
+
+on m_horizontal.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_horizontal.destroy
+call super::destroy
+end on
+
+type m_layer from m_a`m_layer within m_window
+end type
+
+on m_layer.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_layer.destroy
+call super::destroy
+end on
+
+type m_cascade from m_a`m_cascade within m_window
+end type
+
+on m_cascade.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_cascade.destroy
+call super::destroy
+end on
+
+type m_-pt11 from m_a`m_-pt11 within m_window
+end type
+
+on m_-pt11.create
+call super::create
+this.visible = false
+end on
+
+on m_-pt11.destroy
+call super::destroy
+end on
+
+type m_arrangeicons from m_a`m_arrangeicons within m_window
+end type
+
+on m_arrangeicons.create
+call super::create
+this.visible = false
+this.toolbaritemvisible = false
+end on
+
+on m_arrangeicons.destroy
+call super::destroy
+end on
+
+type m_-pt3 from m_a`m_-pt3 within m_window
+end type
+
+on m_-pt3.create
+call super::create
+this.visible = false
+end on
+
+on m_-pt3.destroy
+call super::destroy
+end on
+
+type m_toolbar from m_a`m_toolbar within m_window
+end type
+
+on m_toolbar.create
+call super::create
+end on
+
+on m_toolbar.destroy
+call super::destroy
+end on
+
+type m_-pt5 from m_a`m_-pt5 within m_window
+end type
+
+on m_-pt5.create
+call super::create
+this.visible = false
+end on
+
+on m_-pt5.destroy
+call super::destroy
+end on
+
+type m_panel from m_a`m_panel within m_window
+end type
+
+on m_panel.create
+call super::create
+this.visible = false
+end on
+
+on m_panel.destroy
+call super::destroy
+end on
+
+type m_help from m_a`m_help within m_frame_pt
+end type
+
+on m_help.create
+call super::create
+end on
+
+on m_help.destroy
+call super::destroy
+end on
+
+type m_index from m_a`m_index within m_help
+end type
+
+on m_index.create
+call super::create
+end on
+
+on m_index.destroy
+call super::destroy
+end on
+
+type m_-pt4 from m_a`m_-pt4 within m_help
+end type
+
+on m_-pt4.create
+call super::create
+end on
+
+on m_-pt4.destroy
+call super::destroy
+end on
+
+type m_gettingstarted from m_a`m_gettingstarted within m_help
+end type
+
+on m_gettingstarted.create
+call super::create
+end on
+
+on m_gettingstarted.destroy
+call super::destroy
+end on
+
+type m_search from m_a`m_search within m_help
+end type
+
+on m_search.create
+call super::create
+end on
+
+on m_search.destroy
+call super::destroy
+end on
+
+type m_-pt6 from m_a`m_-pt6 within m_help
+end type
+
+on m_-pt6.create
+call super::create
+end on
+
+on m_-pt6.destroy
+call super::destroy
+end on
+
+type m_about from m_a`m_about within m_help
+end type
+
+on m_about.create
+call super::create
+end on
+
+on m_about.destroy
+call super::destroy
+end on
+

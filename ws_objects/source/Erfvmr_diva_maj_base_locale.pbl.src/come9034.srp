@@ -1,0 +1,16 @@
+﻿$PBExportHeader$come9034.srp
+$PBExportComments$Pipeline pour mise à jour du facilité de saisie
+PIPELINE(source_connect=LC - Développement,destination_connect=Mysql Force Vente,type=replace,commit=100,errors=100,keyname="idx_reference_equiv")
+SOURCE(name="COME9034",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no)
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no)
+ COLUMN(type=char,name="ARTAEEQU",dbtype="char(18)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="DIMAEEQU",dbtype="char(8)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="ARTAE000",dbtype="char(18)",nulls_allowed=no)
+ COLUMN(type=char,name="DIMAEART",dbtype="char(8)",nulls_allowed=no))
+RETRIEVE(statement="PBSELECT(TABLE(NAME=~"COME9034~") COLUMN(NAME=~"COME9034.TIMEFCRE~")COLUMN(NAME=~"COME9034.CODEEMAJ~")COLUMN(NAME=~"COME9034.ARTAEEQU~")COLUMN(NAME=~"COME9034.DIMAEEQU~")COLUMN(NAME=~"COME9034.ARTAE000~")COLUMN(NAME=~"COME9034.DIMAEART~"))")
+DESTINATION(name="COME9034",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no,initial_value="today")
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="ARTAEEQU",dbtype="char(18)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="DIMAEEQU",dbtype="char(8)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="ARTAE000",dbtype="char(18)",nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="DIMAEART",dbtype="char(8)",nulls_allowed=no,initial_value="spaces"))

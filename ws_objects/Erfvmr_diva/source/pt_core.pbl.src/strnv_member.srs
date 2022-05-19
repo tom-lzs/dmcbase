@@ -1,0 +1,7 @@
+﻿$PBExportHeader$strnv_member.srs
+$PBExportComments$Structure à usage réservé
+global type strnv_member from structure
+	graphicobject		go_member
+	boolean		b_active
+end type
+

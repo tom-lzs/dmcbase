@@ -1,0 +1,11 @@
+﻿$PBExportHeader$come9035.srp
+PIPELINE(source_connect=LC - Développement,destination_connect=Mysql Force Vente,type=replace,commit=100,errors=100,keyname="COME9035_x")
+SOURCE(name="COME9035",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no)
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no)
+ COLUMN(type=char,name="NPRAEACT",dbtype="char(4)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="CODAEMAR",dbtype="char(3)",key=yes,nulls_allowed=no))
+RETRIEVE(statement="PBSELECT(TABLE(NAME=~"COME9035~") COLUMN(NAME=~"COME9035.TIMEFCRE~")COLUMN(NAME=~"COME9035.CODEEMAJ~")COLUMN(NAME=~"COME9035.NPRAEACT~")COLUMN(NAME=~"COME9035.CODAEMAR~"))")
+DESTINATION(name="COME9035",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no,initial_value="today")
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="NPRAEACT",dbtype="char(4)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="CODAEMAR",dbtype="char(3)",key=yes,nulls_allowed=no,initial_value="spaces"))

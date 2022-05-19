@@ -1,0 +1,14 @@
+﻿$PBExportHeader$d_ctrl_reference.srd
+$PBExportComments$Controle existence de la référence (Art/Gro/Nuance)
+release 8;
+datawindow(units=0 timer_interval=0 color=16777215 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=88 color="536870912" )
+table(column=(type=char(18) updatewhereclause=yes key=yes name=artae000 dbname="COME9030.ARTAE000" )
+ column=(type=char(8) updatewhereclause=yes key=yes name=dimaeart dbname="COME9030.DIMAEART" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9030~" ) COLUMN(NAME=~"COME9030.ARTAE000~") COLUMN(NAME=~"COME9030.DIMAEART~")WHERE(    EXP1 =~"COME9030.ARTAE000~"   OP =~"=~"    EXP2 =~":a_s_article~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"COME9030.DIMAEART~"   OP =~"=~"    EXP2 =~":a_s_dimension~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"COME9030.CODEEMAJ~"   OP =~"<>~"    EXP2 =~"'A'~" ) ) ARG(NAME = ~"a_s_article~" TYPE = string)  ARG(NAME = ~"a_s_dimension~" TYPE = string) " update="COME9030" updatewhere=0 updatekeyinplace=no arguments=(("a_s_article", string),("a_s_dimension", string)) )
+column(band=detail id=1 alignment="0" tabsequence=0 border="0" color="0" x="0" y="0" height="76" width="576" html.valueishtml="0"  name=artae000 visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=0 border="0" color="0" x="576" y="0" height="76" width="256" html.valueishtml="0"  name=dimaeart visible="1"  font.face="Arial" font.height="-12" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="0" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

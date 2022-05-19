@@ -1,0 +1,18 @@
+﻿$PBExportHeader$come9033.srp
+$PBExportComments$Pipeline pour mise à jour repertoire des promotions
+PIPELINE(source_connect=LC - Développement,destination_connect=Mysql Force Vente,type=replace,commit=100,errors=100,keyname="idx_npraeact")
+SOURCE(name="COME9033",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no)
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no)
+ COLUMN(type=char,name="NPRAEACT",dbtype="char(4)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="LPRAEACT",dbtype="char(44)",nulls_allowed=yes)
+ COLUMN(type=datetime,name="DTDAEVA0",dbtype="datetime",nulls_allowed=no)
+ COLUMN(type=datetime,name="DTFAEVA0",dbtype="datetime",nulls_allowed=no)
+ COLUMN(type=datetime,name="DTEAELCT",dbtype="datetime",nulls_allowed=yes))
+RETRIEVE(statement="PBSELECT( VERSION(400) TABLE(NAME=~"COME9033~" ) COLUMN(NAME=~"COME9033.TIMEFCRE~") COLUMN(NAME=~"COME9033.CODEEMAJ~") COLUMN(NAME=~"COME9033.NPRAEACT~") COLUMN(NAME=~"COME9033.LPRAEACT~") COLUMN(NAME=~"COME9033.DTDAEVA0~") COLUMN(NAME=~"COME9033.DTFAEVA0~") COLUMN(NAME=~"COME9033.DTEAELCT~")) ")
+DESTINATION(name="COME9033",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no,initial_value="today")
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="NPRAEACT",dbtype="char(4)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="LPRAEACT",dbtype="char(44)",nulls_allowed=yes)
+ COLUMN(type=datetime,name="DTDAEVA0",dbtype="datetime",nulls_allowed=no,initial_value="today")
+ COLUMN(type=datetime,name="DTFAEVA0",dbtype="datetime",nulls_allowed=no,initial_value="today")
+ COLUMN(type=datetime,name="DTEAELCT",dbtype="datetime",nulls_allowed=yes))

@@ -1,0 +1,18 @@
+﻿$PBExportHeader$d_impression_ligne_cde_erreur.srd
+$PBExportComments$Contient les datatwindows pour impression des lignes de commande en anomalie pour format document interne
+release 8;
+datawindow(units=0 timer_interval=0 color=1073741824 processing=5 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 10 print.margin.right = 10 print.margin.top = 96 print.margin.bottom = 96 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=140 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=64 color="536870912" )
+detail(height=340 color="536870912"  height.autosize=yes)
+table(column=(type=char(10) updatewhereclause=yes name=a dbname="a" )
+ unbound = "yes"arguments=(("as_cde", string),("as_code_langue", string)) )
+text(band=header alignment="2" text="*LISTE DES LIGNES DE COMMANDES EN ANOMALIE*" border="0" color="0" x="192" y="4" height="80" width="2185" html.valueishtml="0"  name=libelano_t visible="1"  font.face="Arial" font.height="-12" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16777215" )
+compute(band=header alignment="0" expression=" today()"border="0" color="0" x="2487" y="20" height="64" width="521" format="[General]" html.valueishtml="0"  name=date_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" font.underline="1" background.mode="2" background.color="16777215" )
+report(band=detail dataobject="d_imp_ligne_cde_erreur" x="18" y="196" height="120" width="3218" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_cde ")) trail_footer = yes  name=dw_2 visible="1"  slideleft=yes  slideup=allabove )
+report(band=footer dataobject="d_entete_saisie_cde_impress" x="416" y="60" height="120" width="3022" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_cde "),(" as_code_langue ")) trail_footer = yes  name=dw_entete visible="1"  slideup=directlyabove )
+compute(band=footer alignment="2" expression="'Page ' + page() + ' of ' + pageCount()"border="2" color="0" x="2267" y="0" height="52" width="622" format="[general]" html.valueishtml="0"  name=page_1 visible="1"  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+report(band=detail dataobject="d_entete_saisie_cde_impress" x="9" y="20" height="120" width="3054" border="0"  height.autosize=yes criteria="" nest_arguments=((" as_cde "),(" as_code_langue ")) trail_footer = yes  name=dw_1 visible="1"  slideup=directlyabove )
+htmltable(border="1" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

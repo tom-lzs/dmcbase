@@ -1,0 +1,231 @@
+﻿$PBExportHeader$m_menu.srm
+forward
+global type m_menu from menu
+end type
+type m_fichierfile from menu within m_menu
+end type
+type m_imprimerprint from menu within m_fichierfile
+end type
+type m_explorer from menu within m_fichierfile
+end type
+type m_envoimailsendmail from menu within m_fichierfile
+end type
+type m_quitterquit from menu within m_fichierfile
+end type
+type m_fichierfile from menu within m_menu
+m_imprimerprint m_imprimerprint
+m_explorer m_explorer
+m_envoimailsendmail m_envoimailsendmail
+m_quitterquit m_quitterquit
+end type
+global type m_menu from menu
+m_fichierfile m_fichierfile
+end type
+end forward
+
+global type m_menu from menu
+m_fichierfile m_fichierfile
+end type
+global m_menu m_menu
+
+on m_menu.create
+m_menu=this
+call super::create
+this.text = "m_menu"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+this.m_fichierfile=create m_fichierfile
+this.Item[UpperBound(this.Item)+1]=this.m_fichierfile
+end on
+
+on m_menu.destroy
+call super::destroy
+destroy(this.m_fichierfile)
+end on
+
+event clicked;w_impression_fichiers.PostEvent ("ue_close")
+end event
+
+type m_fichierfile from menu within m_menu
+m_imprimerprint m_imprimerprint
+m_explorer m_explorer
+m_envoimailsendmail m_envoimailsendmail
+m_quitterquit m_quitterquit
+end type
+
+on m_fichierfile.create
+call super::create
+this.text = "Fichier/File"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+this.m_imprimerprint=create m_imprimerprint
+this.m_explorer=create m_explorer
+this.m_envoimailsendmail=create m_envoimailsendmail
+this.m_quitterquit=create m_quitterquit
+this.Item[UpperBound(this.Item)+1]=this.m_imprimerprint
+this.Item[UpperBound(this.Item)+1]=this.m_explorer
+this.Item[UpperBound(this.Item)+1]=this.m_envoimailsendmail
+this.Item[UpperBound(this.Item)+1]=this.m_quitterquit
+end on
+
+on m_fichierfile.destroy
+call super::destroy
+destroy(this.m_imprimerprint)
+destroy(this.m_explorer)
+destroy(this.m_envoimailsendmail)
+destroy(this.m_quitterquit)
+end on
+
+type m_imprimerprint from menu within m_fichierfile
+end type
+
+on m_imprimerprint.create
+call super::create
+this.text = "Imprimer/Print"
+this.toolbaritemname = "print!"
+this.toolbaritemtext = "Imprimer/Print"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_imprimerprint.destroy
+call super::destroy
+end on
+
+event clicked;w_impression_fichiers.PostEvent ("ue_print")
+end event
+
+type m_explorer from menu within m_fichierfile
+end type
+
+on m_explorer.create
+call super::create
+this.text = "Aperçu / Preview"
+this.toolbaritemname = "preview!"
+this.toolbaritemtext = "Aperçu / Preview"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_explorer.destroy
+call super::destroy
+end on
+
+event clicked;w_impression_fichiers.PostEvent ("ue_printpreview")
+end event
+
+type m_envoimailsendmail from menu within m_fichierfile
+end type
+
+on m_envoimailsendmail.create
+call super::create
+this.text = "Envoi Mail / Send Mail"
+this.toolbaritemname = "C:\donnees\PowerBuilder\DivaPrint\Images\mail.ico"
+this.toolbaritemtext = "Envoi Mail/Send Mail"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_envoimailsendmail.destroy
+call super::destroy
+end on
+
+event clicked;w_impression_fichiers.PostEvent ("ue_mail")
+end event
+
+type m_quitterquit from menu within m_fichierfile
+end type
+
+event clicked;w_impression_fichiers.PostEvent ("ue_close")
+end event
+
+on m_quitterquit.create
+call super::create
+this.text = "Quitter/Quit"
+this.toolbaritemname = "exit!"
+this.menutextcolor = 134217735
+this.menubackcolor = 134217732
+this.menuhighlightcolor = 134217741
+this.textsize = 8
+this.weight = 400
+this.facename = "Tahoma"
+this.titlebackcolor = 134217730
+this.bitmapbackcolor = 12632256
+this.menubitmaps = true
+this.titlegradient = true
+this.toolbartextcolor = 134217746
+this.toolbarbackcolor = 67108864
+this.toolbarhighlightcolor = 134217741
+this.toolbargradient = true
+this.bitmapgradient = true
+end on
+
+on m_quitterquit.destroy
+call super::destroy
+end on
+

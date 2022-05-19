@@ -1,0 +1,12 @@
+﻿$PBExportHeader$come9038.srp
+$PBExportComments$Pipeline pour mise à jour repertoire des références gratuites associées aux promotions
+PIPELINE(source_connect=LC - Développement,destination_connect=Mysql Force Vente,type=replace,commit=100,errors=100,keyname="idx_promo_article")
+SOURCE(name="COME9038",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no)
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no)
+ COLUMN(type=char,name="NPRAEACT",dbtype="char(4)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="ARTAE000",dbtype="char(18)",key=yes,nulls_allowed=no))
+RETRIEVE(statement="PBSELECT(TABLE(NAME=~"COME9038~") COLUMN(NAME=~"COME9038.TIMEFCRE~")COLUMN(NAME=~"COME9038.CODEEMAJ~")COLUMN(NAME=~"COME9038.NPRAEACT~")COLUMN(NAME=~"COME9038.ARTAE000~"))")
+DESTINATION(name="COME9038",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=no,initial_value="today")
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="NPRAEACT",dbtype="char(4)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="ARTAE000",dbtype="char(18)",key=yes,nulls_allowed=no,initial_value="spaces"))

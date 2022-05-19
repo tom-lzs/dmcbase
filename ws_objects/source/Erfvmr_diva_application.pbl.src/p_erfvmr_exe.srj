@@ -1,0 +1,30 @@
+﻿$PBExportHeader$p_erfvmr_exe.srj
+$PBExportComments$Generated Application Executable Project
+EXE:erfvmr.exe,erfvmr_diva.pbr,0,1,1,0,C:\Program Files (x86)\Appeon\Common\PowerBuilder\Runtime 19.2.0.2703
+CMP:0,0,0,3,0,0,1
+COM:Appeon
+DES:Appeon Product File
+CPY:
+PRD:PowerBuilder Enterprise Series
+PVS:1.0.0.1
+PVN:1,0,0,1
+FVS:1.0.0.1
+FVN:1,0,0,1
+MAN:0,asInvoker,0
+PBD:Erfvmr_diva_application.pbl,,1
+PBD:tooltip_objects.pbl,,1
+PBD:Erfvmr_diva_infos_client.pbl,,1
+PBD:Erfvmr_diva_maj_base_locale.pbl,,1
+PBD:Erfvmr_diva_maj_serveur.pbl,,1
+PBD:Erfvmr_diva_objects_textes.pbl,,1
+PBD:Erfvmr_diva_objets_cdes.pbl,,1
+PBD:Erfvmr_diva_objets_communs.pbl,,1
+PBD:Erfvmr_diva_objets_fonctionnels.pbl,,1
+PBD:Erfvmr_diva_objets_listes.pbl,,1
+PBD:Erfvmr_diva_objets_references.pbl,,1
+PBD:Erfvmr_diva_recuperation_cde.pbl,,1
+PBD:pc_core.pbl,,1
+PBD:pt_core.pbl,,1
+PBD:pt_env.pbl,,1
+PBD:pv_core.pbl,,1
+PBD:pv_env.pbl,,1

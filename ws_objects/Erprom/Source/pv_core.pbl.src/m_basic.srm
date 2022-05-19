@@ -1,0 +1,20 @@
+﻿$PBExportHeader$m_basic.srm
+$PBExportComments$Ancêtre des menus de base .
+forward
+global type m_basic from m_basic_pt
+end type
+end forward
+
+global type m_basic from m_basic_pt
+end type
+global m_basic m_basic
+
+on m_basic.create
+m_basic=this
+call m_basic_pt::create
+end on 
+
+on m_basic.destroy
+call m_basic_pt::destroy
+end on 
+

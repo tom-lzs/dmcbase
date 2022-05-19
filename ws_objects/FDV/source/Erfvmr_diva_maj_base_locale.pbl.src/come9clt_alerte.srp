@@ -1,0 +1,11 @@
+﻿$PBExportHeader$come9clt_alerte.srp
+PIPELINE(source_connect=LC - Développement,destination_connect=Mysql Force Vente,type=replace,commit=100,errors=100,keyname="COME9CLT_ALERTE_x")
+SOURCE(name="COME9CLT_ALERTE",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=yes)
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=yes)
+ COLUMN(type=char,name="NUMAECLF",dbtype="char(10)",key=yes,nulls_allowed=no)
+ COLUMN(type=char,name="ALERTE",dbtype="char(50)",nulls_allowed=yes))
+RETRIEVE(statement="PBSELECT(TABLE(NAME=~"COME9CLT_ALERTE~") COLUMN(NAME=~"COME9CLT_ALERTE.TIMEFCRE~")COLUMN(NAME=~"COME9CLT_ALERTE.CODEEMAJ~")COLUMN(NAME=~"COME9CLT_ALERTE.NUMAECLF~")COLUMN(NAME=~"COME9CLT_ALERTE.ALERTE~"))")
+DESTINATION(name="COME9CLT_ALERTE",COLUMN(type=datetime,name="TIMEFCRE",dbtype="datetime",nulls_allowed=yes)
+ COLUMN(type=char,name="CODEEMAJ",dbtype="char(1)",nulls_allowed=yes)
+ COLUMN(type=char,name="NUMAECLF",dbtype="char(10)",key=yes,nulls_allowed=no,initial_value="spaces")
+ COLUMN(type=char,name="ALERTE",dbtype="char(50)",nulls_allowed=yes))

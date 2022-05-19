@@ -1,0 +1,33 @@
+﻿$PBExportHeader$f_key.srf
+$PBExportComments$Permet de lancer l'evenement Key de la fenetre contenant l'objet ayant trapper la touche de fonction
+global type f_key from function_object
+end type
+
+forward prototypes
+global subroutine f_key (readonly window a_win)
+end prototypes
+
+global subroutine f_key (readonly window a_win);/* <DESC>
+       Cette fonction est appelée par les objets d'une fenetre (datawindo,list...) pour laquelle une option peut être
+	  activée par une touche de fonction (Ex: F11 pour Valider, F2 = affichage d'une liste...) et ceci dans l'évènement
+	  we_dwnkey de l'objet.
+       Controle de la touche de fonction activée et s'il s'agit d'une touche utilisée dans l'application
+	  déclenchement de l'évènement Key de la fenêtre d'appartenant à l'objet et passée en paramètre
+   </DESC> */
+	
+IF KeyDown (keyF1!) &
+	OR KeyDown (keyF2!) &
+	OR KeyDown (keyF3!) &
+	OR KeyDown (keyF4!) &
+	OR KeyDown (keyF5!) &
+	OR KeyDown (keyF6!) &
+	OR KeyDown (keyF7!) &
+	OR KeyDown (keyF8!) &
+	OR KeyDown (keyF9!) &
+	OR KeyDown (keyF10!) &
+	OR KeyDown (keyF11!) &
+	OR KeyDown (keyF12!) THEN
+	a_win.TriggerEvent ("key")
+END IF
+end subroutine
+

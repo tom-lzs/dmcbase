@@ -1,0 +1,9 @@
+﻿$PBExportHeader$str_assoc.srs
+$PBExportComments$Structure pour w_a_assoc.
+global type str_assoc from structure
+    string s_column[]
+    string s_source[]
+    string s_item[]
+    string s_key[]
+end type
+

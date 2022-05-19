@@ -1,0 +1,19 @@
+﻿$PBExportHeader$d_ref_offerte_promo.srd
+$PBExportComments$Contient la liste des références offertes pour la promotion sélectionnée
+release 8;
+datawindow(units=0 timer_interval=0 color=1090519039 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no rows_per_detail = 2 )
+header(height=72 color="12632256" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="1090519039" )
+table(column=(type=char(18) updatewhereclause=yes name=artae000 dbname="COME9039.ARTAE000" )
+ column=(type=char(8) updatewhereclause=yes name=dimaeart dbname="COME9039.DIMAEART" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9039~" ) COLUMN(NAME=~"COME9039.ARTAE000~") COLUMN(NAME=~"COME9039.DIMAEART~")WHERE(    EXP1 =~"COME9039.NPRAEACT~"   OP =~"=~"    EXP2 =~":a_s_promo~"    LOGIC =~"and~" ) WHERE(    EXP1 =~"COME9039.CODEEMAJ~"   OP =~"<>~"    EXP2 =~"'A'~" ) ) ARG(NAME = ~"a_s_promo~" TYPE = string) " arguments=(("a_s_promo", string)) )
+text(band=header alignment="2" text="*Références Offertes*" border="0" color="0" x="14" y="4" height="56" width="1349" html.valueishtml="0"  name=refgra_t visible="1"  font.face="Arial" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+line(band=header x1="9" y1="60" x2="1367" y2="60"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="443" y="0" height="56" width="201" format="[general]" html.valueishtml="0" row_in_detail=1  name=dimaeart_1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=2 alignment="0" tabsequence=32766 border="0" color="0" x="1143" y="0" height="56" width="206" format="[general]" html.valueishtml="0" row_in_detail=2  name=dimaeart_2 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="16711680" x="699" y="0" height="56" width="416" format="[general]" html.valueishtml="0" row_in_detail=2  name=artae000_2 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+column(band=detail id=1 alignment="0" tabsequence=32766 border="0" color="16711680" x="9" y="4" height="56" width="416" format="[general]" html.valueishtml="0" row_in_detail=1  name=artae000_1 visible="1" edit.limit=0 edit.case=any edit.autoselect=yes edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="16777215" )
+htmltable(border="0" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

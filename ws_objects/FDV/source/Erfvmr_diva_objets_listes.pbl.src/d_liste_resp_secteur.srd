@@ -1,0 +1,22 @@
+﻿$PBExportHeader$d_liste_resp_secteur.srd
+$PBExportComments$Contient la liste des responsables de secteur
+release 8;
+datawindow(units=0 timer_interval=0 color=12632256 processing=0 HTMLDW=no print.documentname="" print.orientation = 0 print.margin.left = 110 print.margin.right = 110 print.margin.top = 97 print.margin.bottom = 97 print.paper.source = 0 print.paper.size = 0 print.prompt=no print.buttons=no print.preview.buttons=no )
+header(height=84 color="536870912" )
+summary(height=0 color="536870912" )
+footer(height=0 color="536870912" )
+detail(height=68 color="536870912" )
+table(column=(type=char(20) updatewhereclause=yes name=numaeto0 dbname="COME9PRM.CODPARAM" )
+ column=(type=char(40) updatewhereclause=yes name=libaetou dbname="COME9PRM.VALPARAM" )
+ retrieve="PBSELECT( VERSION(400) TABLE(NAME=~"COME9PRM~" ) COLUMN(NAME=~"COME9PRM.CODPARAM~") COLUMN(NAME=~"COME9PRM.VALPARAM~")WHERE(    EXP1 =~"COME9PRM.CODTAB~"   OP =~"=~"    EXP2 =~"'COME9013'~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"COME9PRM.CODPARAM~"   OP =~"<>~"    EXP2 =~"'?'~"    LOGIC =~"And~" ) WHERE(    EXP1 =~"COME9PRM.CODLANG~"   OP =~"=~"    EXP2 =~":as_langue~" ) ) ARG(NAME = ~"as_langue~" TYPE = string) " arguments=(("as_langue", string))  sort="numaeto0 A " )
+text(band=header alignment="2" text="*Code*" border="0" color="0" x="14" y="8" height="52" width="206" html.valueishtml="0"  name=numaeto0_5_t visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256"  height.autosize=yes)
+text(band=header alignment="2" text="Intitulé" border="0" color="0" x="270" y="8" height="52" width="457" html.valueishtml="0"  name=libaetou_t visible="1"  font.face="MS Sans Serif" font.height="-8" font.weight="700"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256"  height.autosize=yes)
+line(band=header x1="0" y1="76" x2="1303" y2="76"  name=l_1 visible="1" pen.style="0" pen.width="5" pen.color="0"  background.mode="2" background.color="12632256" )
+bitmap(band=header filename="Q:\RESSOURC\IMAGES\tri_desc.bmp" x="741" y="8" height="64" width="50" border="0"  name=libaetou_p_desc visible="0" )
+bitmap(band=header filename="Q:\RESSOURC\IMAGES\tri_asc.bmp" x="197" y="4" height="64" width="50" border="0"  name=numaeto0_p_asc visible="0" )
+bitmap(band=header filename="Q:\RESSOURC\IMAGES\tri_desc.bmp" x="201" y="4" height="64" width="50" border="0"  name=numaeto0_p_desc visible="0" )
+bitmap(band=header filename="Q:\RESSOURC\IMAGES\tri_asc.bmp" x="741" y="8" height="64" width="50" border="0"  name=libaetou_p_asc visible="0" )
+column(band=detail id=2 alignment="0" tabsequence=0 border="0" color="0" x="343" y="4" height="56" width="960" html.valueishtml="0"  name=libaetou visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+column(band=detail id=1 alignment="0" tabsequence=0 border="0" color="0" x="9" y="0" height="60" width="315" html.valueishtml="0"  name=numaeto0  tag="" visible="1" edit.limit=0 edit.case=any edit.focusrectangle=no edit.autoselect=no edit.imemode=0  font.face="Arial" font.height="-8" font.weight="400"  font.family="2" font.pitch="2" font.charset="0" background.mode="2" background.color="12632256" )
+htmltable(border="0" )
+htmlgen(clientevents="1" clientvalidation="1" clientcomputedfields="1" clientformatting="0" clientscriptable="0" generatejavascript="1" netscapelayers="0" )

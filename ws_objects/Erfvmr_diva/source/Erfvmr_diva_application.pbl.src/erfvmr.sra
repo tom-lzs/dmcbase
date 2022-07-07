@@ -540,7 +540,7 @@ long richtexteditx64type = 3
 long richtexteditversion = 1
 string richtexteditkey = ""
 string appicon = "C:\appscir\Erfvmr_diva\Image\PHONE_1.ICO"
-string appruntimeversion = "19.2.0.2728"
+string appruntimeversion = "19.2.0.2703"
 end type
 global erfvmr erfvmr
 

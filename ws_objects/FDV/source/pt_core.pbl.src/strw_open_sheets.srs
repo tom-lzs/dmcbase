@@ -1,7 +1,0 @@
-﻿$PBExportHeader$strw_open_sheets.srs
-$PBExportComments$Structure à usage réservé
-global type strw_open_sheets from structure
-	window		w_sheet
-	string		s_key
-end type
-

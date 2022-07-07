@@ -150,18 +150,18 @@ end type
 
 type dw_edi from u_dw_q within w_ligne_cde_info_ref
 string tag = "A_TRADUIRE"
-integer x = 119
+integer x = 110
 integer y = 856
-integer width = 2706
-integer height = 1220
+integer width = 2715
+integer height = 1132
 integer taborder = 21
 boolean bringtotop = true
 string dataobject = "d_ligne_cde_info_edi"
 end type
 
 type pb_ok from u_pba_ok within w_ligne_cde_info_ref
-integer x = 731
-integer y = 2088
+integer x = 736
+integer y = 2040
 integer width = 361
 integer height = 152
 integer taborder = 31
@@ -172,8 +172,8 @@ string picturename = "c:\appscir\Erfvmr_diva\Image\pbok.bmp"
 end type
 
 type pb_echap from u_pba_echap within w_ligne_cde_info_ref
-integer x = 1285
-integer y = 2088
+integer x = 1289
+integer y = 2040
 integer width = 320
 integer height = 152
 integer taborder = 41

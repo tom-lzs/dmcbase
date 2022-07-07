@@ -1755,7 +1755,7 @@ string title = "Gestion des anomalies"
 string dataobject = "d_ligne_cde"
 boolean hscrollbar = true
 boolean vscrollbar = true
-borderstyle borderstyle = StyleBox!
+borderstyle borderstyle = stylelowered!
 end type
 
 event dw_1::ue_repositionne_curseur();/* <DESC>
@@ -2187,6 +2187,8 @@ integer width = 375
 integer height = 156
 integer taborder = 50
 boolean bringtotop = true
+string picturename = "c:\appscir\Erfvmr_diva\Image\PB_VIDE.bmp"
+string disabledname = "c:\appscir\Erfvmr_diva\Image\PB_VIDE.bmp"
 end type
 
 type pb_nuance from u_pba_art_nua within w_ligne_cde
